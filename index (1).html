@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudVault — Secure File Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg-canvas">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="bg-grid"></div>
+
+  <!-- Card -->
+  <div class="card">
+
+    <!-- Header -->
+    <div class="card-header">
+      <div class="logo-ring">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 15a4 4 0 0 0 4 4h10a4 4 0 0 0 0-8H6.343A3 3 0 1 1 8 5h.01"/>
+        </svg>
+      </div>
+      <h1>CloudVault</h1>
+      <p>Secure · Fast · Private cloud storage</p>
+    </div>
+
+    <!-- Steps -->
+    <div class="steps">
+
+      <!-- Step 1 -->
+      <div class="step" id="step1">
+        <div class="step-label">
+          <div class="step-num">01</div>
+          <span class="step-title">Upload File</span>
+        </div>
+
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" />
+          <div class="drop-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+          </div>
+          <p class="drop-text">
+            <strong>Browse</strong> or drag &amp; drop your file here
+          </p>
+        </div>
+
+        <div class="file-info" id="fileInfo">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7"/>
+          </svg>
+          <span id="fileName">—</span>
+        </div>
+
+        <button class="btn btn-primary" id="uploadBtn" onclick="uploadFile()" style="margin-top:12px">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Upload File
+        </button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step" id="step2">
+        <div class="step-label">
+          <div class="step-num">02</div>
+          <span class="step-title">Generate Secure Link</span>
+        </div>
+
+        <div class="link-box" id="linkBox">
+          <span class="link-text" id="linkText">No link generated yet…</span>
+          <button class="copy-btn" onclick="copyLink()" title="Copy link">
+            <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+        </div>
+
+        <button class="btn btn-ghost" onclick="generateLink()">
+          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          Generate Link
+        </button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step" id="step3">
+        <div class="step-label">
+          <div class="step-num">03</div>
+          <span class="step-title">Access File</span>
+        </div>
+
+        <button class="btn btn-primary" onclick="openFile()">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Open in New Tab
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <div class="toast-dot"></div>
+    <span>Message</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
