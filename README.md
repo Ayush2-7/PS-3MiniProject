@@ -69,6 +69,7 @@ Toast notifications for user feedback
 👨‍💻 Author
 
 Ayush Yadav
+Aryan Yadav
 Computer Engineering Student
 
 ⭐ Support
